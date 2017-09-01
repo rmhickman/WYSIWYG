@@ -68,6 +68,7 @@ function addEventListenerMaker (){
 
 			selectedBox.classList.add("borderz");
 			textBox.focus();
+
 		});
 	}
 }
@@ -100,6 +101,15 @@ function domString(objects) {
 		}
 	})
 	
+	textBox.addEventListener("keypress", function(e){
+		var text = document.getElementById('inputField').value;
+		for(var i = 0; i < selectedBox.children.length; i++){
+			currentBox = selectedBox.children[i];
+			if(currentBox.classList.contains("famousBio")){
+				currentBox.innerHTML = text + e.key;
+			}
+		}
+	})
 	
 
 
